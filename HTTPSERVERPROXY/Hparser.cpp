@@ -5,7 +5,7 @@ std::string Hparser::PasingHtml(const char* html)
 	std::string tempparsing = html;
 	size_t hostindex = tempparsing.find("=https://");
     size_t endindex = tempparsing.find("end");
-	if (hostindex != -1 && endindex!=-1)
+	if (hostindex != -1 && endindex != -1)
 	{
 		std::string temp= tempparsing.substr(hostindex +9, endindex-9-hostindex);
 		int l = temp.find("com/");
@@ -137,10 +137,12 @@ std::string Hparser::httpRequest(std::string uri, std::string location)
 	}
 	// Report any errors.
 	if (!bResults) std::cout<<GetLastError();
+	
 	// Close any open handles.
 	if (hRequest) WinHttpCloseHandle(hRequest);
 	if (hConnect) WinHttpCloseHandle(hConnect);
 	if (hSession) WinHttpCloseHandle(hSession);
+
 	return "https://news.imaeil.com/photos/2020/02/20/2020022022361319178_l.jpg";
 }
 

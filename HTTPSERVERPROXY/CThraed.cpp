@@ -1,4 +1,5 @@
 #include "CThraed.h"
+
 CThread::CThread(size_t num_threads)
 	: num_threads_(num_threads), stop_all(false)
 {
